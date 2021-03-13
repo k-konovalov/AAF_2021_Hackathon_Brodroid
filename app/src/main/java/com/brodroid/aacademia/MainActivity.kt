@@ -1,8 +1,7 @@
 package com.brodroid.aacademia
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.brodroid.aacademia.ui.FragmentPdfView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 

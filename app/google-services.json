@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "447109281365",
+    "firebase_url": "https://aacademy-c0452-default-rtdb.firebaseio.com/",
+    "project_id": "aacademy-c0452",
+    "storage_bucket": "aacademy-c0452.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447109281365:android:c2c0be76c2f6de727486dc",
+        "android_client_info": {
+          "package_name": "com.brodroid.aacademia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447109281365-f71e0ek011oo35gru3gj18mbas437r4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBNcgyfMR8Jif73Oa9h61MAaKpyS4ZBHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447109281365-f71e0ek011oo35gru3gj18mbas437r4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
