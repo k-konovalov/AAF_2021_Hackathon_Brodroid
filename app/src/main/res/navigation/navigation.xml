@@ -9,5 +9,14 @@
         android:id="@+id/lessonFragment"
         android:name="com.brodroid.aacademia.LessonsFragment"
         android:label="LessonFragment"
-        tools:layout="@layout/fragment_lesson"/>
+        tools:layout="@layout/fragment_lesson">
+        <action
+            android:id="@+id/action_lessonFragment_to_lessonDetailsFragment"
+            app:destination="@id/lessonDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonDetailsFragment"
+        android:name="com.brodroid.aacademia.LessonDetailsFragment"
+        android:label="lesson_details_fragment"
+        tools:layout="@layout/lesson_details_fragment" />
 </navigation>

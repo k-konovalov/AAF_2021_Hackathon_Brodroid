@@ -28,7 +28,7 @@ class AdapterLessons(
     override fun onBindViewHolder(holder: HolderLesson, position: Int) {
         holder.onBind(lessonList[position], holder.itemView.context)
         holder.itemView.setOnClickListener {
-            onClick.moveDetailLesson(lessonList[position])
+            onClick.moveDetailsLesson(lessonList[position])
         }
     }
 
