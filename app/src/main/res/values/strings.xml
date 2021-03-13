@@ -4,8 +4,10 @@
     <string name="lesson_fragment_tab_video_item">Video</string>
     <string name="lesson_fragment_tab_slides_item">Slides</string>
     <string name="lesson_fragment_tab_homework_item">Homework</string>
+    <string name="fragment_homework_link">https://docs.google.com/document/d/%s/edit</string>
+    <string name="fragment_presentation_link">https://docs.google.com/presentation/d/%s}</string>
 
-  <string name="empty_presentation_message">На данный момент презентация недоступна! \n Приносим свои извинения, за временные
+  <string name="empty_presentation_message">На данный момент материал недоступен! \n Приносим свои извинения, за временные
         неудобства!</string>
 
 </resources>

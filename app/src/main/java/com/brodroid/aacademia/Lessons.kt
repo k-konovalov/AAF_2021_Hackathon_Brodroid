@@ -20,19 +20,19 @@ data class Lesson(
 	val timestamps: List<Timestamp?>? = null,
 
 	@SerialName("name")
-	val name: String? = null,
+	val name: String? = "",
 
 	@SerialName("id")
-	val id: String? = null,
+	val id: String? = "",
 
 	@SerialName("presentation_id")
-	val presentation_id: String? = null,
+	val presentation_id: String? = "",
 
 	@SerialName("youtube_id")
 	val youtube_id: String? = null,
 
 	@SerialName("homework_id")
-	val homework_id: String? = null
+	val homework_id: String? = ""
 ) : java.io.Serializable
 
 @Serializable

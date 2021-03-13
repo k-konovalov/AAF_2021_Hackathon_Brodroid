@@ -1,10 +1,10 @@
-package com.brodroid.aacademia
+package com.brodroid.aacademia.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeworkViewModel : ViewModel() {
+class PresentationViewModel : ViewModel() {
 
     private var _onReadyToShow = MutableLiveData<Unit>()
     private var _onEmptyUrl = MutableLiveData<Unit>()
