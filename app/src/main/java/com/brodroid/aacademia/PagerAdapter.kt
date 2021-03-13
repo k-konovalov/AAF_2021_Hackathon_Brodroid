@@ -5,7 +5,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.brodroid.aacademia.ui.PresentationFragment
 
 class PagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-    private var videoFragment: VideoFragment = VideoFragment.newInstance()
+    private var videoFragment: VideoFragment = VideoFragment.newInstance("")
     private var homeworkFragment: HomeworkFragment  = HomeworkFragment.newInstance("")
     private var presentationFragment: PresentationFragment = PresentationFragment.newInstance("")
 
@@ -23,7 +23,6 @@ class PagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     fun updateParams(lesson: Lesson) {
         homeworkFragment = HomeworkFragment.newInstance(lesson.homework_id ?: "")
         presentationFragment = PresentationFragment.newInstance(lesson.presentation_id ?: "")
-        videoFragment = VideoFragment.newInstance()
-
+        videoFragment = VideoFragment.newInstance(lesson.youtube_id?: "")
     }
 }
