@@ -21,10 +21,10 @@ class LessonDetailsFragment : Fragment(R.layout.lesson_details_fragment) {
         lessonFragmentBinding = binding
 
         val lesson = arguments?.getSerializable("LESSON") as Lesson?
-//        val viewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
 
         val tabLayout = binding.lessonTablayout
         pagerAdapter = PagerAdapter(this)
+        lesson?.let { pagerAdapter.updateParams(it) }
         viewPager = binding.lessonViewpager
         viewPager.adapter = pagerAdapter
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->

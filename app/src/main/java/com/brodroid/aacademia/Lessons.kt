@@ -33,7 +33,7 @@ data class Lesson(
 
 	@SerialName("homework_id")
 	val homework_id: String? = null
-)
+) : java.io.Serializable
 
 @Serializable
 data class Timestamp(
