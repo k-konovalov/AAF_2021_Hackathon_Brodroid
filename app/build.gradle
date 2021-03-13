@@ -44,7 +44,7 @@ dependencies {
     //FireBase
     implementation 'com.google.firebase:firebase-bom:26.7.0'
     implementation 'com.firebaseui:firebase-ui-database:6.2.1'
-    implementation 'com.google.firebase:firebase-database:19.3.1'
+    implementation 'com.google.firebase:firebase-database:19.7.0'
 
     //Serialiation
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"

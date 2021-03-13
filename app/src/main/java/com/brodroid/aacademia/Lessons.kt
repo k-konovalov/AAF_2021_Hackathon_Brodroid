@@ -4,19 +4,19 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Lesson(
+data class Lessons(
 
 	@SerialName("lessons")
-	val lessons: List<LessonsItem?>? = null
+	val lessons: List<Lesson?>? = null
 )
 
-data class LessonsItem(
+data class Lesson(
 
 	@SerialName("date")
 	val date: String? = null,
 
 	@SerialName("timestamps")
-	val timestamps: List<TimestampsItem?>? = null,
+	val timestamps: List<Timestamp?>? = null,
 
 	@SerialName("name")
 	val name: String? = null,
@@ -25,13 +25,13 @@ data class LessonsItem(
 	val id: String? = null,
 
 	@SerialName("presentation_id")
-	val presentationId: String? = null,
+	val presentation_id: String? = null,
 
 	@SerialName("youtube_id")
-	val youtubeId: String? = null
+	val youtube_id: String? = null
 )
 
-data class TimestampsItem(
+data class Timestamp(
 
 	@SerialName("name")
 	val name: String? = null,
