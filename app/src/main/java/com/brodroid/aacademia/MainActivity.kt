@@ -1,7 +1,6 @@
 package com.brodroid.aacademia
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
@@ -16,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         var firebaseDatabase: FirebaseDatabase? = null
         var databaseReference: DatabaseReference? = null
 
-        firebaseDatabase = FirebaseDatabase.getInstance("https://aacademy-c0452-default-rtdb.firebaseio.com/")
+        firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.getReference("lessons")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
