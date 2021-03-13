@@ -1,10 +1,12 @@
 package com.brodroid.aacademia.viewModel
 
 import android.app.Application
+import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.brodroid.aacademia.Lesson
+import com.brodroid.aacademia.*
 import com.google.firebase.database.*
 
 class ViewModelLessons(application: Application) : AndroidViewModel(application) {
@@ -25,7 +27,20 @@ class ViewModelLessons(application: Application) : AndroidViewModel(application)
     }
 
     private fun getValuesFromFireBase() {
+        var lessonsCount = 0
         databaseReference?.let { databaseReference ->
+            databaseReference?.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    Log.d("ListenerForSingleValue", snapshot.childrenCount.toString())
+                    lessonsCount = snapshot.childrenCount.toInt()
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+
             databaseReference.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     // this method is call to get the realtime
@@ -37,11 +52,13 @@ class ViewModelLessons(application: Application) : AndroidViewModel(application)
                     val lessons: MutableList<Lesson> = mutableListOf()
                     snapshot.children.mapNotNullTo(lessons) {
                         it.getValue(Lesson::class.java)
-                        // after getting the value we are setting
-                        // our value to our text view in below line.
                     }
                     if (lessons.isNotEmpty()) {
                         liveDataLessonList.postValue(lessons)
+                        if(lessons.size > lessonsCount) {
+                            val notification: Notification = NewLessonNotification(getApplication())
+                            notification.showNotification(lessons.last())
+                        }
                     }
                 }
 
