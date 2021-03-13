@@ -28,7 +28,10 @@ data class Lesson(
 	val presentation_id: String? = null,
 
 	@SerialName("youtube_id")
-	val youtube_id: String? = null
+	val youtube_id: String? = null,
+
+	@SerialName("homework_id")
+	val homework_id: String? = null
 )
 
 data class Timestamp(
