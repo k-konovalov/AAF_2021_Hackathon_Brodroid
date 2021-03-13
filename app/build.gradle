@@ -6,11 +6,11 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    buildToolsVersion '30.0.2'
 
     defaultConfig {
         applicationId "com.brodroid.aacademia"
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -47,16 +47,21 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
-    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
     //FireBase
     implementation 'com.google.firebase:firebase-bom:26.7.0'
     implementation 'com.firebaseui:firebase-ui-database:6.2.1'
     implementation 'com.google.firebase:firebase-database:19.7.0'
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
 
     //Serialiation
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
-    implementation "org.jetbrains.kotlin:kotlin-serialization:1.4.21"
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1'
+    implementation 'org.jetbrains.kotlin:kotlin-serialization:1.4.21'
+
+    //Work manager
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+    implementation "androidx.work:work-gcm:2.5.0"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
