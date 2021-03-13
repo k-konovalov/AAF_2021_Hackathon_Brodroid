@@ -19,7 +19,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image_icon_lesson"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="170dp"
                 android:scaleType="center"
                 android:src="@drawable/background_mask"
                 app:layout_constraintStart_toStartOf="parent"
@@ -32,14 +32,14 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/text_data_lesson"
+                    android:id="@+id/text_date_lesson"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="01.01.2021" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/text_number_lesson"
+                    android:id="@+id/text_name_lesson"
                     style="@style/TextAppearance.MaterialComponents.Headline6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
