@@ -8,7 +8,7 @@ class PagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> VideoFragment()
+            0 -> VideoFragment() as Fragment
             1 -> SlidesFragment()
             2 -> HomeworkFragment()
             else -> throw IllegalStateException()

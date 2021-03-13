@@ -10,6 +10,7 @@ data class Lessons(
 	val lessons: List<Lesson?>? = null
 )
 
+@Serializable
 data class Lesson(
 
 	@SerialName("date")
@@ -34,6 +35,7 @@ data class Lesson(
 	val homework_id: String? = null
 )
 
+@Serializable
 data class Timestamp(
 
 	@SerialName("name")

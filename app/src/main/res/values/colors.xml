@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="progressBar_color">#02a96a</color>
+    <color name="color_toolbar_1">#388e3c</color>
+    <color name="color_toolbar_2">#4caf50</color>
+    <color name="background_card_view">#E8FFE8</color>
+    <color name="background_view_holder_lessons">#f5f5f5</color>
 </resources>

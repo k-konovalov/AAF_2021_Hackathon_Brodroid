@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.brodroid.aacademia.adapter.AdapterLessons
 import com.brodroid.aacademia.adapter.OnClickDetailLesson
@@ -35,8 +36,11 @@ class LessonsFragment : Fragment(R.layout.fragment_lesson) {
     }
 
     private val onClick = object : OnClickDetailLesson {
-        override fun moveDetailLesson(listLesson: Lesson) {
-            Toast.makeText(context, "Lesson ${listLesson.name}", Toast.LENGTH_SHORT).show()
+        override fun moveDetailsLesson(listLesson: Lesson) {
+//            Toast.makeText(context, "Lesson ${listLesson.name}", Toast.LENGTH_SHORT).show()
+            val bundle = Bundle()
+            bundle.putSerializable("LESSON", listLesson)
+            findNavController().navigate(R.id.action_lessonFragment_to_lessonDetailsFragment, bundle)
         }
     }
 }

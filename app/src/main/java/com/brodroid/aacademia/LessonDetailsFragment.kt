@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.brodroid.aacademia.databinding.LessonFragmentBinding
+import com.brodroid.aacademia.databinding.LessonDetailsFragmentBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-class LessonFragment : Fragment(R.layout.lesson_fragment) {
+class LessonDetailsFragment : Fragment(R.layout.lesson_details_fragment) {
 
-    private var lessonFragmentBinding: LessonFragmentBinding? = null
+    private var lessonFragmentBinding: LessonDetailsFragmentBinding? = null
 
     private lateinit var pagerAdapter: PagerAdapter
     private lateinit var viewPager: ViewPager2
@@ -17,9 +17,10 @@ class LessonFragment : Fragment(R.layout.lesson_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val binding = LessonFragmentBinding.bind(view)
+        val binding = LessonDetailsFragmentBinding.bind(view)
         lessonFragmentBinding = binding
 
+        val lesson = arguments?.getSerializable("LESSON") as Lesson?
 //        val viewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
 
         val tabLayout = binding.lessonTablayout
