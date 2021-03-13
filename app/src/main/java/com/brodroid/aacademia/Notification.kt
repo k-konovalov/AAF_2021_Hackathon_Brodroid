@@ -43,27 +43,13 @@ class NewLessonNotification(private val context: Context) : Notification {
             PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-//        val pIntent_addToCalendar = PendingIntent.getBroadcast(context, 2,
-//            Intent(
-//                context, NotificationReceiver::class.java)
-//                .putExtra(NotificationReceiver.ARG_MESSAGE, "Add to calendar Intent")
-//                .setAction(NotificationReceiver.ACTION_TOAST_LONG),
-//            PendingIntent.FLAG_UPDATE_CURRENT
-//        )
-
-//        val action = NotificationCompat.Action.Builder(
-//            IconCompat.createWithResource(context, R.drawable.ic_launcher_background),
-//            "Add to calendar",
-//            pIntent_addToCalendar
-//        ).build()
-
         val notification = NotificationCompat.Builder(context, "AA")
             .setContentTitle(lesson.name)
             .setContentText(lesson.date)
             .setWhen(Instant.now().toEpochMilli())
             .setContentIntent(pIntent_showLesson)
             .setStyle(NotificationCompat.BigTextStyle())
-            .setSmallIcon(R.drawable.ic_launcher_background)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setAutoCancel(true)
             .build()
 
