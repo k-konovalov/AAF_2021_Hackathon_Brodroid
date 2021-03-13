@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AAcademia</string>
+
+    <string name="lesson_fragment_tab_video_item">Video</string>
+    <string name="lesson_fragment_tab_slides_item">Slides</string>
+    <string name="lesson_fragment_tab_homework_item">Homework</string>
 </resources>
