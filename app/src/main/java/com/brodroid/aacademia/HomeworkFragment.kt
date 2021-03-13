@@ -29,7 +29,7 @@ class HomeworkFragment : Fragment(R.layout.homework_fragment) {
             val webView: WebView = view.findViewById(R.id.webView)
             webView.configAndShow(presentationUrl)
         } else {
-            view.findViewById<TextView>(R.id.presentationEmptyMessage).isVisible = true
+            view.findViewById<TextView>(R.id.emptyMessage).isVisible = true
         }
     }
 
