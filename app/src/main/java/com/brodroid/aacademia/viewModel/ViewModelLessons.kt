@@ -29,7 +29,7 @@ class ViewModelLessons(application: Application) : AndroidViewModel(application)
     private fun getValuesFromFireBase() {
         var lessonsCount = 0
         databaseReference?.let { databaseReference ->
-            databaseReference?.addListenerForSingleValueEvent(object : ValueEventListener {
+            databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     Log.d("ListenerForSingleValue", snapshot.childrenCount.toString())
                     lessonsCount = snapshot.childrenCount.toInt()
@@ -58,6 +58,8 @@ class ViewModelLessons(application: Application) : AndroidViewModel(application)
                         if(lessons.size > lessonsCount) {
                             val notification: Notification = NewLessonNotification(getApplication())
                             notification.showNotification(lessons.last())
+                        } else {
+                            lessonsCount = lessons.size
                         }
                     }
                 }
