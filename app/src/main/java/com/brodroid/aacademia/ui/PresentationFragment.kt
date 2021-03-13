@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.brodroid.aacademia.R
 import com.brodroid.aacademia.util.configAndShow
 
-class FragmentPdfView: Fragment(R.layout.fragment_pdf_view) {
+class PresentationFragment: Fragment(R.layout.fragment_pdf_view) {
 
     private val presentationUrl: String by lazy { requireArguments().getString(PRESENTATION_URL, "") }
 
@@ -27,7 +27,7 @@ class FragmentPdfView: Fragment(R.layout.fragment_pdf_view) {
 
     companion object {
         private const val PRESENTATION_URL = "url"
-        fun newInstance(url: String) = FragmentPdfView().apply {
+        fun newInstance(url: String) = PresentationFragment().apply {
             arguments = Bundle().apply {
                 putString(PRESENTATION_URL, url)
             }
