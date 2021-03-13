@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.brodroid.aacademia.Lesson
@@ -42,6 +43,7 @@ class AdapterLessons(
 
 class HolderLesson(item: View) : RecyclerView.ViewHolder(item) {
 
+    private val progressBarMovie: ProgressBar = item.findViewById(R.id.progress_horizontal_movie)
     private val iconLesson: ImageView = item.findViewById(R.id.image_icon_lesson)
     private val textNameLesson: TextView = item.findViewById(R.id.text_name_lesson)
     private val textDateLesson: TextView = item.findViewById(R.id.text_date_lesson)
