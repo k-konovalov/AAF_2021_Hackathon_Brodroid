@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AAcademia</string>
+    <string name="empty_presentation_message">На данный момент презентация недоступна! \n Приносим свои извинения, за временные
+        неудобства!</string>
 </resources>
