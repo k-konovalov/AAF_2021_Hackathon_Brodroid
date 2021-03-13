@@ -10,6 +10,7 @@ data class Lessons(
 	val lessons: List<Lesson?>? = null
 )
 
+@Serializable
 data class Lesson(
 
 	@SerialName("date")
@@ -29,7 +30,7 @@ data class Lesson(
 
 	@SerialName("youtube_id")
 	val youtube_id: String? = null
-)
+) : java.io.Serializable
 
 data class Timestamp(
 

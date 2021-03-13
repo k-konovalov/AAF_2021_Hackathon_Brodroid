@@ -10,4 +10,9 @@
         android:layout_height="match_parent"
         android:text="@string/lesson_fragment_tab_video_item" />
 
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </FrameLayout>
