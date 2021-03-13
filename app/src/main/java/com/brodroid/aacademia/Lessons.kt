@@ -29,9 +29,13 @@ data class Lesson(
 	val presentation_id: String? = null,
 
 	@SerialName("youtube_id")
-	val youtube_id: String? = null
-) : java.io.Serializable
+	val youtube_id: String? = null,
 
+	@SerialName("homework_id")
+	val homework_id: String? = null
+)
+
+@Serializable
 data class Timestamp(
 
 	@SerialName("name")
