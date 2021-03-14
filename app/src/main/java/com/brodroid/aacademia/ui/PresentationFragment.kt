@@ -7,12 +7,14 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.brodroid.aacademia.BUNDLE_PRESENTATION_FRAGMENT
 import com.brodroid.aacademia.R
 import com.brodroid.aacademia.util.configAndShow
 
 class PresentationFragment: Fragment(R.layout.fragment_presentation_layout) {
 
-    private val presentationUrl: String by lazy { requireArguments().getString(PRESENTATION_URL, "") }
+    private val presentationUrl: String by lazy { requireArguments().getString(
+        BUNDLE_PRESENTATION_FRAGMENT, "") }
     private lateinit var viewModel: PresentationViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

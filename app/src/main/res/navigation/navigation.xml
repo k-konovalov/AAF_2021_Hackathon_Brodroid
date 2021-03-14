@@ -11,17 +11,48 @@
         android:label="LessonFragment"
         tools:layout="@layout/fragment_lesson">
         <action
-            android:id="@+id/action_lessonFragment_to_lessonDetailsFragment"
-            app:destination="@id/lessonDetailsFragment" />
+            android:id="@+id/action_lessonFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/lessonDetailsFragment"
-        android:name="com.brodroid.aacademia.LessonDetailsFragment"
-        android:label="lesson_details_fragment"
-        tools:layout="@layout/lesson_details_fragment">
-        <deepLink
-            android:id="@+id/deepLink"
-            app:action="ACTION_VIEW"
-            app:uri="https://com.brodroid.aacademy/lesson/{lessonId}" />
+        android:id="@+id/videoFragment"
+        android:name="com.brodroid.aacademia.VideoFragment"
+        android:label="video_fragment"
+        tools:layout="@layout/video_fragment" >
+        <action
+            android:id="@+id/action_videoFragment_to_presentationFragment"
+            app:destination="@id/presentationFragment"
+            app:popUpTo="@id/lessonFragment" />
+        <action
+            android:id="@+id/action_videoFragment_to_homeworkFragment"
+            app:destination="@id/homeworkFragment"
+            app:popUpTo="@id/lessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/presentationFragment"
+        android:name="com.brodroid.aacademia.ui.PresentationFragment"
+        android:label="PresentationFragment" >
+        <action
+            android:id="@+id/action_presentationFragment_to_homeworkFragment"
+            app:destination="@id/homeworkFragment"
+            app:popUpTo="@id/lessonFragment" />
+        <action
+            android:id="@+id/action_presentationFragment_to_videoFragment"
+            app:destination="@id/videoFragment"
+            app:popUpTo="@id/lessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeworkFragment"
+        android:name="com.brodroid.aacademia.HomeworkFragment"
+        android:label="fragment_homework_layout"
+        tools:layout="@layout/fragment_homework_layout" >
+        <action
+            android:id="@+id/action_homeworkFragment_to_presentationFragment"
+            app:destination="@id/presentationFragment"
+            app:popUpTo="@id/lessonFragment" />
+        <action
+            android:id="@+id/action_homeworkFragment_to_videoFragment"
+            app:destination="@id/videoFragment"
+            app:popUpTo="@id/lessonFragment" />
     </fragment>
 </navigation>
