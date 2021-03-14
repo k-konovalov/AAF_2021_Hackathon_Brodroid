@@ -10,5 +10,8 @@
 
   <string name="empty_presentation_message">На данный момент материал недоступен! \n Приносим свои извинения, за временные
         неудобства!</string>
+    <string name="video">Video</string>
+    <string name="slides">Slides</string>
+    <string name="work">Homework</string>
 
 </resources>

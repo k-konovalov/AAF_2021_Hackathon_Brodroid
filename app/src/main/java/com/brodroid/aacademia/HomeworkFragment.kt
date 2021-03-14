@@ -11,11 +11,13 @@ import com.brodroid.aacademia.util.configAndShow
 
 class HomeworkFragment : Fragment(R.layout.fragment_homework_layout) {
 
-    private val homeworkUrl: String by lazy { requireArguments().getString(HOME_URL, "") }
+    private val homeworkUrl: String by lazy { requireArguments().getString(BUNDLE_HOMEWORK_FRAGMENT, "") }
     private lateinit var viewModel: HomeworkViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         viewModel = ViewModelProvider(this).get(HomeworkViewModel::class.java)
         viewModel.checkWhatSHowToUser(homeworkUrl)
         viewModel.onReadyToShow.observe(viewLifecycleOwner) { showWebViewWithUrl(homeworkUrl) }

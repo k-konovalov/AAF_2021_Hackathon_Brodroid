@@ -11,7 +11,7 @@ import com.brodroid.aacademia.util.configAndShow
 
 class VideoFragment : Fragment(R.layout.video_fragment) {
 
-    private val videoUrl: String by lazy { requireArguments().getString(VIDEO_URL, "") }
+    private val videoUrl: String by lazy { requireArguments().getString(BUNDLE_VIDEO_FRAGMENT, "") }
 
     private lateinit var viewModel: VideoViewModel
 
@@ -33,7 +33,6 @@ class VideoFragment : Fragment(R.layout.video_fragment) {
             view.findViewById<TextView>(R.id.emptyMessage).isVisible = true
         }
     }
-
 
     private fun showWebViewWithUrl(videoUrl: String) {
         val webView: WebView? = view?.findViewById(R.id.webView)

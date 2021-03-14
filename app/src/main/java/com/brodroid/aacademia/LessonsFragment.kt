@@ -11,6 +11,10 @@ import com.brodroid.aacademia.adapter.AdapterLessons
 import com.brodroid.aacademia.adapter.OnClickDetailLesson
 import com.brodroid.aacademia.viewModel.ViewModelLessons
 
+const val BUNDLE_VIDEO_FRAGMENT = "BUNDLE_VIDEO_FRAGMENT"
+const val BUNDLE_PRESENTATION_FRAGMENT = "BUNDLE_PRESENTATION_FRAGMENT"
+const val BUNDLE_HOMEWORK_FRAGMENT = "BUNDLE_HOMEWORK_FRAGMENT"
+
 class LessonsFragment : Fragment(R.layout.fragment_lesson) {
 
     private lateinit var recyclerView: RecyclerView;
@@ -36,11 +40,12 @@ class LessonsFragment : Fragment(R.layout.fragment_lesson) {
     }
 
     private val onClick = object : OnClickDetailLesson {
-        override fun moveDetailsLesson(listLesson: Lesson) {
-//            Toast.makeText(context, "Lesson ${listLesson.name}", Toast.LENGTH_SHORT).show()
+        override fun moveDetailsLesson(lesson: Lesson) {
             val bundle = Bundle()
-            bundle.putSerializable("LESSON", listLesson)
-            findNavController().navigate(R.id.action_lessonFragment_to_lessonDetailsFragment, bundle)
+            bundle.putString(BUNDLE_VIDEO_FRAGMENT, lesson.youtube_id ?: "")
+            bundle.putString(BUNDLE_PRESENTATION_FRAGMENT, lesson.presentation_id ?: "")
+            bundle.putString(BUNDLE_HOMEWORK_FRAGMENT, lesson.homework_id ?: "")
+            findNavController().navigate(R.id.action_lessonFragment_to_videoFragment, bundle)
         }
     }
 }
