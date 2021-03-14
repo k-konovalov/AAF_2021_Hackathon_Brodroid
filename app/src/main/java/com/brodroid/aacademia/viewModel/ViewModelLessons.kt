@@ -1,7 +1,6 @@
 package com.brodroid.aacademia.viewModel
 
 import android.app.Application
-import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel

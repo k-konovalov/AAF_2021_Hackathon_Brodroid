@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="progressBar_color">#02a96a</color>
+    <color name="progressBarRed_color">#fe0101</color>
     <color name="color_toolbar_1">#388e3c</color>
     <color name="color_toolbar_2">#4caf50</color>
     <color name="background_card_view">#E8FFE8</color>
