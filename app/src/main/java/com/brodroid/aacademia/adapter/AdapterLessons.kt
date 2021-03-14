@@ -9,8 +9,10 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.brodroid.aacademia.Lesson
+import com.brodroid.aacademia.ProgressBarAnimation
 import com.brodroid.aacademia.R
 import com.bumptech.glide.Glide
+
 
 const val BASE_URL_LESSON_IMAGE = "https://img.youtube.com/vi/%s/0.jpg"
 
@@ -51,6 +53,10 @@ class HolderLesson(item: View) : RecyclerView.ViewHolder(item) {
     fun onBind(listLesson: Lesson, context: Context) {
         textNameLesson.text = listLesson.name
         textDateLesson.text = listLesson.date
+
+        val anim = ProgressBarAnimation(progressBarMovie, 0f, (20..80).random().toFloat())
+        anim.setDuration(1000)
+        progressBarMovie.startAnimation(anim)
 
         listLesson.id?.let { setImage(it, context) }
     }

@@ -26,7 +26,7 @@ class LessonsFragment : Fragment(R.layout.fragment_lesson) {
         }
 
         mViewModelLessons.liveDataLessonList.observe(viewLifecycleOwner, {listLesson ->
-            Toast.makeText(context, "List size = ${listLesson.size}", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, "List size = ${listLesson.size}", Toast.LENGTH_SHORT).show()
             setAdapter(listLesson)
         })
     }

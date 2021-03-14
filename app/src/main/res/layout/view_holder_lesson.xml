@@ -43,6 +43,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_name_lesson"
                     style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
@@ -55,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:progress="50"
-                android:progressTint="@color/progressBar_color" />
+                android:progressTint="@color/progressBarRed_color" />
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
