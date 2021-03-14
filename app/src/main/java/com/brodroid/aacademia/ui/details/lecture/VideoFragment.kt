@@ -1,4 +1,4 @@
-package com.brodroid.aacademia
+package com.brodroid.aacademia.ui.details.lecture
 
 import android.os.Bundle
 import android.view.View
@@ -7,9 +7,11 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.brodroid.aacademia.R
+import com.brodroid.aacademia.ui.lessons.BUNDLE_VIDEO_FRAGMENT
 import com.brodroid.aacademia.util.configAndShow
 
-class VideoFragment : Fragment(R.layout.video_fragment) {
+class VideoFragment : Fragment(R.layout.fragment_video) {
 
     private val videoUrl: String by lazy { requireArguments().getString(BUNDLE_VIDEO_FRAGMENT, "") }
 

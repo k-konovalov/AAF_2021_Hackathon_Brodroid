@@ -1,11 +1,13 @@
-package com.brodroid.aacademia.viewModel
+package com.brodroid.aacademia.ui.lessons
 
 import android.app.Application
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.brodroid.aacademia.*
+import com.brodroid.aacademia.ui.data.Lesson
+import com.brodroid.aacademia.util.NewLessonNotification
+import com.brodroid.aacademia.util.Notification
 import com.google.firebase.database.*
 
 class ViewModelLessons(application: Application) : AndroidViewModel(application) {

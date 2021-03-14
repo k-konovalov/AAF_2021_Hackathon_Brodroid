@@ -13,6 +13,6 @@
        android:layout_gravity="center"
        android:orientation="vertical"
        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-       tools:listitem="@layout/view_holder_lesson"/>
+       tools:listitem="@layout/item_viewholder_lesson"/>
 
 </LinearLayout>

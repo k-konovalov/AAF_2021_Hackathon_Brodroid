@@ -1,4 +1,4 @@
-package com.brodroid.aacademia
+package com.brodroid.aacademia.util
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -8,6 +8,9 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.net.toUri
+import com.brodroid.aacademia.ui.data.Lesson
+import com.brodroid.aacademia.R
+import com.brodroid.aacademia.ui.MainActivity
 import java.time.Instant
 
 interface Notification {

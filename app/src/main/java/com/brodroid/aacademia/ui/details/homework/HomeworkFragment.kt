@@ -1,4 +1,4 @@
-package com.brodroid.aacademia
+package com.brodroid.aacademia.ui.details.homework
 
 import android.os.Bundle
 import android.view.View
@@ -7,9 +7,11 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.brodroid.aacademia.ui.lessons.BUNDLE_HOMEWORK_FRAGMENT
+import com.brodroid.aacademia.R
 import com.brodroid.aacademia.util.configAndShow
 
-class HomeworkFragment : Fragment(R.layout.fragment_homework_layout) {
+class HomeworkFragment : Fragment(R.layout.fragment_homework) {
 
     private val homeworkUrl: String by lazy { requireArguments().getString(BUNDLE_HOMEWORK_FRAGMENT, "") }
     private lateinit var viewModel: HomeworkViewModel

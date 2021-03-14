@@ -1,9 +1,10 @@
-package com.brodroid.aacademia
+package com.brodroid.aacademia.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import com.brodroid.aacademia.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

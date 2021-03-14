@@ -1,21 +1,21 @@
-package com.brodroid.aacademia
+package com.brodroid.aacademia.ui.lessons
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.brodroid.aacademia.adapter.AdapterLessons
-import com.brodroid.aacademia.adapter.OnClickDetailLesson
-import com.brodroid.aacademia.viewModel.ViewModelLessons
+import com.brodroid.aacademia.ui.data.Lesson
+import com.brodroid.aacademia.R
+import com.brodroid.aacademia.ui.lessons.adapter.AdapterLessons
+import com.brodroid.aacademia.ui.lessons.adapter.OnClickDetailLesson
 
 const val BUNDLE_VIDEO_FRAGMENT = "BUNDLE_VIDEO_FRAGMENT"
 const val BUNDLE_PRESENTATION_FRAGMENT = "BUNDLE_PRESENTATION_FRAGMENT"
 const val BUNDLE_HOMEWORK_FRAGMENT = "BUNDLE_HOMEWORK_FRAGMENT"
 
-class LessonsFragment : Fragment(R.layout.fragment_lesson) {
+class LessonsFragment : Fragment(R.layout.fragment_lessons_list) {
 
     private lateinit var recyclerView: RecyclerView;
     private val adapterLesson by lazy { AdapterLessons(onClick) }
@@ -30,7 +30,6 @@ class LessonsFragment : Fragment(R.layout.fragment_lesson) {
         }
 
         mViewModelLessons.liveDataLessonList.observe(viewLifecycleOwner, {listLesson ->
-            //Toast.makeText(context, "List size = ${listLesson.size}", Toast.LENGTH_SHORT).show()
             setAdapter(listLesson)
         })
     }

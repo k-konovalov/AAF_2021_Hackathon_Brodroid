@@ -1,4 +1,4 @@
-package com.brodroid.aacademia.adapter
+package com.brodroid.aacademia.ui.lessons.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.brodroid.aacademia.Lesson
-import com.brodroid.aacademia.ProgressBarAnimation
+import com.brodroid.aacademia.ui.data.Lesson
+import com.brodroid.aacademia.util.ProgressBarAnimation
 import com.brodroid.aacademia.R
 import com.bumptech.glide.Glide
 
@@ -24,7 +24,7 @@ class AdapterLessons(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderLesson {
         return HolderLesson(
-            LayoutInflater.from(parent.context).inflate(R.layout.view_holder_lesson, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_viewholder_lesson, parent, false)
         )
     }
 

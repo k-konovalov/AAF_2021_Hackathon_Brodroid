@@ -1,4 +1,4 @@
-package com.brodroid.aacademia.ui
+package com.brodroid.aacademia.ui.details.presentation
 
 import android.os.Bundle
 import android.view.View
@@ -7,11 +7,11 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.brodroid.aacademia.BUNDLE_PRESENTATION_FRAGMENT
+import com.brodroid.aacademia.ui.lessons.BUNDLE_PRESENTATION_FRAGMENT
 import com.brodroid.aacademia.R
 import com.brodroid.aacademia.util.configAndShow
 
-class PresentationFragment: Fragment(R.layout.fragment_presentation_layout) {
+class PresentationFragment: Fragment(R.layout.fragment_presentation) {
 
     private val presentationUrl: String by lazy { requireArguments().getString(
         BUNDLE_PRESENTATION_FRAGMENT, "") }

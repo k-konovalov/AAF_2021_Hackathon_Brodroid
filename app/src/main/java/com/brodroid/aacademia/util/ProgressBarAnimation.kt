@@ -1,4 +1,4 @@
-package com.brodroid.aacademia
+package com.brodroid.aacademia.util
 
 import android.view.animation.Animation
 import android.view.animation.Transformation
