@@ -41,7 +41,7 @@ class NewLessonNotification(private val context: Context) : Notification {
             context, 1,
             Intent(context, MainActivity::class.java,)
                 .setAction(Intent.ACTION_VIEW)
-                .setData("https://com.brodroid.aacademy/lesson/${lesson.id}".toUri()),
+                .setData("https://com.brodroid.aacademy/lesson?youtube_id=${lesson.youtube_id}&amp;presentation_id=${lesson.presentation_id}&amp;homework_id=${lesson.homework_id}".toUri()),
             PendingIntent.FLAG_UPDATE_CURRENT
         )
 

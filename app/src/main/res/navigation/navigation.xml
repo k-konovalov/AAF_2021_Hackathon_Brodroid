@@ -30,7 +30,7 @@
         <deepLink
             android:id="@+id/deepLink"
             app:action="ACTION_VIEW"
-            app:uri="https://com.brodroid.aacademy/lesson/{lessonId}" />
+            app:uri="https://com.brodroid.aacademy/lesson?youtube_id={BUNDLE_VIDEO_FRAGMENT}&amp;presentationId={BUNDLE_PRESENTATION_FRAGMENT}&amp;homeworkId={BUNDLE_HOMEWORK_FRAGMENT}" />
         <action
             android:id="@+id/action_videoFragment_self"
             app:destination="@id/videoFragment"
