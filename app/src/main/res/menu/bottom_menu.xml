@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_video"
+        android:id="@+id/videoFragment"
         android:icon="@drawable/ic_nav_bottom_video"
         android:title="@string/video"/>
 
     <item
-        android:id="@+id/nav_slides"
+        android:id="@+id/presentationFragment"
         android:icon="@drawable/ic_nav_bottom_slides"
         android:title="@string/slides"/>
 
     <item
-        android:id="@+id/nav_homework"
+        android:id="@+id/homeworkFragment"
         android:icon="@drawable/ic_nav_bottom_work"
         android:title="@string/work"/>
 </menu>

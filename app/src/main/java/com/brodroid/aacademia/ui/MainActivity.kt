@@ -22,60 +22,64 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         findNavController(R.id.nav_host_fragment_container).addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
-                R.id.videoFragment -> { bottomNav.visibility = View.VISIBLE
-                    bottomNav.setOnNavigationItemSelectedListener { item ->
-                        when (item.itemId) {
-                            R.id.nav_slides -> {
-                                controller.navigate(R.id.action_videoFragment_to_presentationFragment, arguments)
-                                true
-                            }
-                            R.id.nav_homework -> {
-                                controller.navigate(R.id.action_videoFragment_to_homeworkFragment, arguments)
-                                true
-                            }
-                            else -> {
-                                true
-                            }
-                        }
-                    }
-                }
-                R.id.presentationFragment -> {
-                    bottomNav.setOnNavigationItemSelectedListener { item ->
-                        when (item.itemId) {
-                            R.id.nav_video -> {
-                                controller.navigate(R.id.action_presentationFragment_to_videoFragment, arguments)
-                                true
-                            }
-                            R.id.nav_homework -> {
-                                controller.navigate(R.id.action_presentationFragment_to_homeworkFragment, arguments)
-                                true
-                            }
-
-                            else -> {
-                                true
-                            }
-                        }
-                    }
-                }
-                R.id.homeworkFragment -> {
-                    bottomNav.setOnNavigationItemSelectedListener { item ->
-                        when (item.itemId) {
-                            R.id.nav_video -> {
-                                controller.navigate(R.id.action_homeworkFragment_to_videoFragment, arguments)
-                                true
-                            }
-                            R.id.nav_slides -> {
-                                controller.navigate(R.id.action_homeworkFragment_to_presentationFragment, arguments)
-                                true
-                            }
-                            else -> {
-                                true
-                            }
-                        }
-                    }
-                }
-                R.id.lessonFragment -> { bottomNav.visibility = View.GONE }
+                R.id.lessonFragment -> bottomNav.visibility = View.GONE
+                else -> bottomNav.visibility = View.VISIBLE
             }
+
+//                R.id.videoFragment -> { bottomNav.visibility = View.VISIBLE
+//                    bottomNav.setOnNavigationItemSelectedListener { item ->
+//                        when (item.itemId) {
+//                            R.id.nav_slides -> {
+//                                controller.navigate(R.id.action_videoFragment_to_presentationFragment, arguments)
+//                                true
+//                            }
+//                            R.id.nav_homework -> {
+//                                controller.navigate(R.id.action_videoFragment_to_homeworkFragment, arguments)
+//                                true
+//                            }
+//                            else -> {
+//                                true
+//                            }
+//                        }
+//                    }
+//                }
+//                R.id.presentationFragment -> {
+//                    bottomNav.setOnNavigationItemSelectedListener { item ->
+//                        when (item.itemId) {
+//                            R.id.nav_video -> {
+//                                controller.navigate(R.id.action_presentationFragment_to_videoFragment, arguments)
+//                                true
+//                            }
+//                            R.id.nav_homework -> {
+//                                controller.navigate(R.id.action_presentationFragment_to_homeworkFragment, arguments)
+//                                true
+//                            }
+//
+//                            else -> {
+//                                true
+//                            }
+//                        }
+//                    }
+//                }
+//                R.id.homeworkFragment -> {
+//                    bottomNav.setOnNavigationItemSelectedListener { item ->
+//                        when (item.itemId) {
+//                            R.id.nav_video -> {
+//                                controller.navigate(R.id.action_homeworkFragment_to_videoFragment, arguments)
+//                                true
+//                            }
+//                            R.id.nav_slides -> {
+//                                controller.navigate(R.id.action_homeworkFragment_to_presentationFragment, arguments)
+//                                true
+//                            }
+//                            else -> {
+//                                true
+//                            }
+//                        }
+//                    }
+//                }
+//                R.id.lessonFragment -> { bottomNav.visibility = View.GONE }
+//            }
         }
     }
 }
