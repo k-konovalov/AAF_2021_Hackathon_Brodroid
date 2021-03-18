@@ -1,4 +1,4 @@
-package com.brodroid.aacademia.ui.details.lecture
+package com.brodroid.aacademia.ui.details.video
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
