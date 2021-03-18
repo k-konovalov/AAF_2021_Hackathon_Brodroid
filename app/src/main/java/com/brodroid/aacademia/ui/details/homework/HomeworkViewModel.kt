@@ -6,12 +6,13 @@ import androidx.lifecycle.ViewModel
 
 class HomeworkViewModel : ViewModel() {
 
-    private var _onReadyToShow = MutableLiveData<Unit>()
-    private var _onEmptyUrl = MutableLiveData<Unit>()
+    private val _onReadyToShow = MutableLiveData<Unit>()
     val onReadyToShow: LiveData<Unit> = _onReadyToShow
-    var onEmptyUrl: LiveData<Unit> = _onEmptyUrl
 
-    fun checkWhatSHowToUser(homeworkUrl: String) {
+    private val _onEmptyUrl = MutableLiveData<Unit>()
+    val onEmptyUrl: LiveData<Unit> = _onEmptyUrl
+
+    fun checkWhatShowToUser(homeworkUrl: String) {
         if (homeworkUrl.isEmpty()) {
             _onEmptyUrl.value = Unit
         } else {

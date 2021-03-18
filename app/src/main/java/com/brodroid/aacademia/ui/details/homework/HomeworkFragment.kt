@@ -7,13 +7,14 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.brodroid.aacademia.ui.lessons.BUNDLE_HOMEWORK_FRAGMENT
 import com.brodroid.aacademia.R
+import com.brodroid.aacademia.ui.details.LessonData
 import com.brodroid.aacademia.util.configAndShow
 
 class HomeworkFragment : Fragment(R.layout.fragment_homework) {
 
-    private val homeworkUrl: String by lazy { requireArguments().getString(BUNDLE_HOMEWORK_FRAGMENT, "") }
+    private val homeworkUrl: String by lazy { LessonData.currentLesson?.homework_id.toString() }
+
     private lateinit var viewModel: HomeworkViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,25 +22,16 @@ class HomeworkFragment : Fragment(R.layout.fragment_homework) {
 
 
         viewModel = ViewModelProvider(this).get(HomeworkViewModel::class.java)
-        viewModel.checkWhatSHowToUser(homeworkUrl)
+        viewModel.checkWhatShowToUser(homeworkUrl)
         viewModel.onReadyToShow.observe(viewLifecycleOwner) { showWebViewWithUrl(homeworkUrl) }
         viewModel.onEmptyUrl.observe(viewLifecycleOwner) {
-            view.findViewById<TextView>(R.id.emptyMessage).isVisible = true }
+            view.findViewById<TextView>(R.id.emptyMessage).isVisible = true
+        }
     }
 
     private fun showWebViewWithUrl(homeworkUrl: String) {
         val webView: WebView? = view?.findViewById(R.id.webView)
         webView?.configAndShow(getString(R.string.fragment_homework_link, homeworkUrl))
-    }
-
-    companion object {
-        private const val HOME_URL = "url"
-
-        fun newInstance(url: String) = HomeworkFragment().apply {
-            arguments = Bundle().apply {
-                putString(HOME_URL, url)
-            }
-        }
     }
 
 }
