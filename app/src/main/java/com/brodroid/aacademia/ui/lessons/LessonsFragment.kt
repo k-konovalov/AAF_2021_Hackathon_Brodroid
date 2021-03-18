@@ -6,21 +6,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.brodroid.aacademia.ui.data.Lesson
 import com.brodroid.aacademia.R
+import com.brodroid.aacademia.ui.data.Lesson
+import com.brodroid.aacademia.ui.details.LessonData
 import com.brodroid.aacademia.ui.lessons.adapter.AdapterLessons
 import com.brodroid.aacademia.ui.lessons.adapter.OnClickDetailLesson
 
-const val BUNDLE_VIDEO_FRAGMENT = "BUNDLE_VIDEO_FRAGMENT"
-const val BUNDLE_PRESENTATION_FRAGMENT = "BUNDLE_PRESENTATION_FRAGMENT"
-const val BUNDLE_HOMEWORK_FRAGMENT = "BUNDLE_HOMEWORK_FRAGMENT"
-
 class LessonsFragment : Fragment(R.layout.fragment_lessons_list) {
 
-    private lateinit var recyclerView: RecyclerView;
+    private lateinit var recyclerView: RecyclerView
     private val adapterLesson by lazy { AdapterLessons(onClick) }
 
-    private val mViewModelLessons : ViewModelLessons by viewModels()
+    private val mViewModelLessons: ViewModelLessons by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,7 +26,7 @@ class LessonsFragment : Fragment(R.layout.fragment_lessons_list) {
             adapter = adapterLesson
         }
 
-        mViewModelLessons.liveDataLessonList.observe(viewLifecycleOwner, {listLesson ->
+        mViewModelLessons.liveDataLessonList.observe(viewLifecycleOwner, { listLesson ->
             setAdapter(listLesson)
         })
     }
@@ -40,11 +37,8 @@ class LessonsFragment : Fragment(R.layout.fragment_lessons_list) {
 
     private val onClick = object : OnClickDetailLesson {
         override fun moveDetailsLesson(lesson: Lesson) {
-            val bundle = Bundle()
-            bundle.putString(BUNDLE_VIDEO_FRAGMENT, lesson.youtube_id ?: "")
-            bundle.putString(BUNDLE_PRESENTATION_FRAGMENT, lesson.presentation_id ?: "")
-            bundle.putString(BUNDLE_HOMEWORK_FRAGMENT, lesson.homework_id ?: "")
-            findNavController().navigate(R.id.action_lessonFragment_to_videoFragment, bundle)
+            LessonData.currentLesson = lesson
+            findNavController().navigate(R.id.action_lessonFragment_to_videoFragment)
         }
     }
 }

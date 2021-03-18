@@ -8,28 +8,19 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.brodroid.aacademia.R
-import com.brodroid.aacademia.ui.lessons.BUNDLE_VIDEO_FRAGMENT
+import com.brodroid.aacademia.ui.details.LessonData
 import com.brodroid.aacademia.util.configAndShow
 
 class VideoFragment : Fragment(R.layout.fragment_video) {
 
-    private val videoUrl: String by lazy { requireArguments().getString(BUNDLE_VIDEO_FRAGMENT, "") }
+    private val videoUrl: String by lazy { LessonData.currentLesson?.youtube_id.toString() }
 
     private lateinit var viewModel: VideoViewModel
-
-    companion object {
-        private const val VIDEO_URL = "url"
-        fun newInstance(url: String) = VideoFragment().apply {
-            arguments = Bundle().apply {
-                putString(VIDEO_URL, url)
-            }
-        }
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(VideoViewModel::class.java)
-        viewModel.checkWhatSHowToUser(videoUrl)
+        viewModel.checkWhatShowToUser(videoUrl)
         viewModel.onReadyToShow.observe(viewLifecycleOwner) { showWebViewWithUrl(videoUrl) }
         viewModel.onEmptyUrl.observe(viewLifecycleOwner) {
             view.findViewById<TextView>(R.id.emptyMessage).isVisible = true
@@ -39,12 +30,6 @@ class VideoFragment : Fragment(R.layout.fragment_video) {
     private fun showWebViewWithUrl(videoUrl: String) {
         val webView: WebView? = view?.findViewById(R.id.webView)
         webView?.configAndShow(getString(R.string.fragment_video_link, videoUrl))
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(VideoViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

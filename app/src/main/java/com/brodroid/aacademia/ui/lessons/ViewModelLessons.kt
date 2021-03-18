@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.brodroid.aacademia.ui.data.Lesson
 import com.brodroid.aacademia.util.NewLessonNotification
@@ -15,7 +16,8 @@ class ViewModelLessons(application: Application) : AndroidViewModel(application)
     private var firebaseDatabase: FirebaseDatabase? = null
     private var databaseReference: DatabaseReference? = null
 
-    val liveDataLessonList = MutableLiveData<List<Lesson>>()
+    private val _liveDataLessonList = MutableLiveData<List<Lesson>>()
+    val liveDataLessonList: LiveData<List<Lesson>> = _liveDataLessonList
 
     init {
         firebaseDatabase =
@@ -55,8 +57,8 @@ class ViewModelLessons(application: Application) : AndroidViewModel(application)
                         it.getValue(Lesson::class.java)
                     }
                     if (lessons.isNotEmpty()) {
-                        liveDataLessonList.postValue(lessons)
-                        if(lessons.size > lessonsCount) {
+                        _liveDataLessonList.postValue(lessons)
+                        if (lessons.size > lessonsCount) {
                             val notification: Notification = NewLessonNotification(getApplication())
                             notification.showNotification(lessons.last())
                         } else {
